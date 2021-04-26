@@ -52,9 +52,14 @@
 //   echo " " . $index . ": Name =>" . $person["name"] . " Age => " . $person["age"] . " Profession => " . $person["profession"];
 // }
 
-$jack = 21;
-if($jack == 21){
-  echo "Jack is 21";
-} else {
-  echo "Jack is not 21";
+// $jack = 21;
+// if($jack == 21){
+//   echo "Jack is 21";
+// } else {
+//   echo "Jack is not 21";
+// }
+$number = 1;
+while($number < 100){
+  echo $number . " ";
+  $number++;
 }
