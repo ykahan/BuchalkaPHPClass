@@ -22,32 +22,37 @@
 // $articles = array("First post", "Second post", "Last post");
 // var_dump($articles);
 // echo $articles[1];
-$alice = array(
-  "name" => "Alice",
-  "age" => 42,
-  "profession" => "writer"
-);
+// $alice = array(
+//   "name" => "Alice",
+//   "age" => 42,
+//   "profession" => "writer"
+// );
+//
+// $john = array(
+//   "name" => "John",
+//   "age" => 37,
+//   "profession" => "programmer"
+// );
+//
+// $slagathorpe = array(
+//   "name" => "Slagathorpe",
+//   "age" => 56,
+//   "profession" => "Ghostbuster"
+// );
+//
+// $people = array($alice, $john, $slagathorpe);
+// var_dump($people);
+//
+// foreach($people as $person){
+//   echo $person["name"], " ", $person["age"], " ", $person["profession"];
+// }
+//
+// // to get the indices, add another variable like so
+// foreach($people as $index => $person){
+//   echo " " . $index . ": Name =>" . $person["name"] . " Age => " . $person["age"] . " Profession => " . $person["profession"];
+// }
 
-$john = array(
-  "name" => "John",
-  "age" => 37,
-  "profession" => "programmer"
-);
-
-$slagathorpe = array(
-  "name" => "Slagathorpe",
-  "age" => 56,
-  "profession" => "Ghostbuster"
-);
-
-$people = array($alice, $john, $slagathorpe);
-var_dump($people);
-
-foreach($people as $person){
-  echo $person["name"], " ", $person["age"], " ", $person["profession"];
-}
-
-// to get the indices, add another variable like so
-foreach($people as $index => $person){
-  echo " " . $index . ": Name =>" . $person["name"] . " Age => " . $person["age"] . " Profession => " . $person["profession"];
+$jack;
+if(empty($jack)){
+  echo "Empty";
 }
