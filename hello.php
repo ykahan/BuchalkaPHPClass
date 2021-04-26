@@ -63,6 +63,14 @@
 //   echo $number . " ";
 //   $number++;
 // }
-for($i = 0; $i < 10; $i++){
-  echo $i . " ";
+// for($i = 0; $i < 10; $i++){
+//   echo $i . " ";
+// }
+$hour = 21;
+if($hour < 12){
+  echo "Good morning";
+} else if ($hour < 20){
+  echo "Good evening";
+} else {
+  echo "Good night";
 }
