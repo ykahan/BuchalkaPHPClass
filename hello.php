@@ -46,3 +46,8 @@ var_dump($people);
 foreach($people as $person){
   echo $person["name"], " ", $person["age"], " ", $person["profession"];
 }
+
+// to get the indices, add another variable like so
+foreach($people as $index => $person){
+  echo " " . $index . ": Name =>" . $person["name"] . " Age => " . $person["age"] . " Profession => " . $person["profession"];
+}
