@@ -66,11 +66,32 @@
 // for($i = 0; $i < 10; $i++){
 //   echo $i . " ";
 // }
-$hour = 21;
-if($hour < 12){
-  echo "Good morning";
-} else if ($hour < 20){
-  echo "Good evening";
-} else {
-  echo "Good night";
+// $hour = 21;
+// if($hour < 12){
+//   echo "Good morning";
+// } else if ($hour < 20){
+//   echo "Good evening";
+// } else {
+//   echo "Good night";
+// }
+$day = "Sat";
+switch($day){
+  case "Mon":
+      echo "Starting the work week";
+      break;
+  case "Tue":
+      echo "Day 2!";
+      break;
+  case "Wed":
+      echo "Middle day";
+      break;
+  case "Thur":
+      echo "The end is in sight...";
+      break;
+  case "Fri":
+      echo "Going home for Shabbos";
+      break;
+  default:
+      echo "Not in the work week now";
+      break;
 }
