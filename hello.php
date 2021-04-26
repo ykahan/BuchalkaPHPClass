@@ -52,9 +52,9 @@
 //   echo " " . $index . ": Name =>" . $person["name"] . " Age => " . $person["age"] . " Profession => " . $person["profession"];
 // }
 
-$jack;
-if(empty($jack)){
-  echo "Empty";
+$jack = 21;
+if($jack == 21){
+  echo "Jack is 21";
 } else {
-  echo "Not empty";
+  echo "Jack is not 21";
 }
