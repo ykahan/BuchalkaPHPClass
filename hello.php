@@ -55,4 +55,6 @@
 $jack;
 if(empty($jack)){
   echo "Empty";
+} else {
+  echo "Not empty";
 }
