@@ -58,8 +58,11 @@
 // } else {
 //   echo "Jack is not 21";
 // }
-$number = 1;
-while($number < 100){
-  echo $number . " ";
-  $number++;
+// $number = 1;
+// while($number < 100){
+//   echo $number . " ";
+//   $number++;
+// }
+for($i = 0; $i < 10; $i++){
+  echo $i . " ";
 }
