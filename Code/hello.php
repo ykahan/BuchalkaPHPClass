@@ -74,24 +74,24 @@
 // } else {
 //   echo "Good night";
 // }
-$day = "Sat";
-switch($day){
-  case "Mon":
-      echo "Starting the work week";
-      break;
-  case "Tue":
-      echo "Day 2!";
-      break;
-  case "Wed":
-      echo "Middle day";
-      break;
-  case "Thur":
-      echo "The end is in sight...";
-      break;
-  case "Fri":
-      echo "Going home for Shabbos";
-      break;
-  default:
-      echo "Not in the work week now";
-      break;
-}
+// $day = "Sat";
+// switch($day){
+//   case "Mon":
+//       echo "Starting the work week";
+//       break;
+//   case "Tue":
+//       echo "Day 2!";
+//       break;
+//   case "Wed":
+//       echo "Middle day";
+//       break;
+//   case "Thur":
+//       echo "The end is in sight...";
+//       break;
+//   case "Fri":
+//       echo "Going home for Shabbos";
+//       break;
+//   default:
+//       echo "Not in the work week now";
+//       break;
+// }
