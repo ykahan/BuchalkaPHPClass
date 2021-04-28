@@ -11,6 +11,7 @@ echo "</head>";
 echo "<body>";
 echo "<h1>We're using HTML with PHP</h1>";
 echo "<p>Isn't that cool?</p>";
+echo "<p>Here's a line with a \nline break in it.</p>";
 echo "<div id=\"root\"></div>";
 echo "<script src=\"main.js\" type=\"text/javascript\"></script>";
 echo "</body>";
