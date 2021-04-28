@@ -9,6 +9,8 @@
 <body>
   <?php $names = ["Yehoshua", "Kahan", "Abba", "Me"]; ?>
   <div id="root"></div>
+
+  <!-- here's a short echo tag -->
   <p>Here's a paragraph <?= "that contains some PHP with a short echo tag"; ?></p>
   <p>Here's a list of names</p>
   <ol>
