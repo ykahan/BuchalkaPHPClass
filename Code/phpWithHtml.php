@@ -9,13 +9,13 @@
 <body>
   <?php $names = ["Yehoshua", "Kahan", "Abba", "Me"]; ?>
   <div id="root"></div>
-  <p>Here's a paragraph <?php echo "that contains some PHP"; ?></p>
+  <p>Here's a paragraph <?= "that contains some PHP with a short echo tag"; ?></p>
   <p>Here's a list of names</p>
-  <ul>
+  <ol>
     <?php foreach($names as $name){
       echo "<li>Current name: $name</li>";
     }?>
-  </ul>
+  </ol>
   <script src="main.js" type="text/javascript"></script>
 </body>
 </html>
