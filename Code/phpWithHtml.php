@@ -18,6 +18,11 @@
       echo "<li>Current name: $name</li>";
     }?>
   </ol>
+  <ul>
+    <?php for($i = 0; $i < count($names); $i++){
+        echo "<li>Current name: $names[$i]</li>";
+    }?>
+    </ul>
   <script src="main.js" type="text/javascript"></script>
 </body>
 </html>
