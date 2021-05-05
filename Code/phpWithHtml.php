@@ -11,17 +11,21 @@
   <div id="root"></div>
 
   <!-- here's a short echo tag -->
-  <p>Here's a paragraph <?= "that contains some PHP with a short echo tag"; ?></p>
+  <p>Here's a paragraph <?= "that contains some PHP with a \"short echo tag\""; ?></p>
   <p>Here's a list of names</p>
   <ol>
-    <?php foreach($names as $name){
+    <?php
+    foreach($names as $name){
       echo "<li>Current name: $name</li>";
-    }?>
+    }
+    ?>
   </ol>
   <ul>
-    <?php for($i = 0; $i < count($names); $i++){
+    <?php
+    for($i = 0; $i < count($names); $i++){
         echo "<li>Current name: $names[$i]</li>";
-    }?>
+    }
+    ?>
     </ul>
   <script src="main.js" type="text/javascript"></script>
 </body>
