@@ -13,3 +13,18 @@ if(mysqli_connect_error()){
 } else {
 	echo "Connected";
 }
+
+$sql_query = "SELECT *
+								FROM articles
+								ORDER BY published_at;";
+
+$query_result = mysqli_query($conn, $sql_query);
+
+if($query_result === false){
+	echo mysqli_error($conn);
+} else {
+    $articles = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
+		foreach($articles as $article){
+			var_dump($article);
+		}
+}
