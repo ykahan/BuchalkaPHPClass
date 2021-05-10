@@ -21,7 +21,8 @@ $query_result = mysqli_query($conn, $sql_query);
 if($query_result === false){
 	echo mysqli_error($conn);
 } else {
-	$articles = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
+	// $article = mysqli_fetch_assoc($query_result, MYSQLI_ASSOC);
+	$article = mysqli_fetch_assoc($query_result);
 }
 ?>
 
@@ -36,17 +37,11 @@ if($query_result === false){
 <body>
 	<h1>A Dynamic Data Driven Blog</h1>
 	<div id="root"></div>
-	<?php if (empty($articles)): ?>
+	<?php if(empty($article)): ?>
 		<p>The blog is empty.  Empty! </p>
 	<?php else: ?>
-	<ol>
-		<?php foreach($articles as $article): ?>
-			<li>
-				<h2><?= $article["title"] ?></h2>
-				<h3><?= $article["content"] ?></h3>
-			</li>
-		<?php endforeach; ?>
-		</ol>
+		<h2><?= $article["title"] ?></h2>
+		<h3><?= $article["content"] ?></h3>
 	<?php endif; ?>
 	<script src="main.js" type="text/javascript"></script>
 </body>
