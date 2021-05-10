@@ -21,7 +21,6 @@ $query_result = mysqli_query($conn, $sql_query);
 if($query_result === false){
 	echo mysqli_error($conn);
 } else {
-	// $article = mysqli_fetch_assoc($query_result, MYSQLI_ASSOC);
 	$article = mysqli_fetch_assoc($query_result);
 }
 ?>
@@ -38,7 +37,7 @@ if($query_result === false){
 	<h1>A Dynamic Data Driven Blog</h1>
 	<div id="root"></div>
 	<?php if(empty($article)): ?>
-		<p>The blog is empty.  Empty! </p>
+		<p>Article not found </p>
 	<?php else: ?>
 		<h2><?= $article["title"] ?></h2>
 		<h3><?= $article["content"] ?></h3>
