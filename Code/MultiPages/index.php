@@ -42,7 +42,11 @@ if($query_result === false){
 	<ol>
 		<?php foreach($articles as $article): ?>
 			<li>
-				<h2><?= $article["title"] ?></h2>
+				<h2>
+					<a href="article.php?id=<?= $article["id"]; ?>">
+						<?= $article["title"] ?>
+					</a>
+				</h2>
 				<h3><?= $article["content"] ?></h3>
 			</li>
 		<?php endforeach; ?>
