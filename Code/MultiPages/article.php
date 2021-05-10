@@ -12,16 +12,21 @@ if(mysqli_connect_error()){
 } else {
 }
 
-$sql_query = "SELECT *
-FROM articles
-WHERE id =" . $_GET["id"];
+if(is_numeric($_GET["id"])){
+	$sql_query = "SELECT *
+	FROM articles
+	WHERE id =" . $_GET["id"];
 
-$query_result = mysqli_query($conn, $sql_query);
+	$query_result = mysqli_query($conn, $sql_query);
 
-if($query_result === false){
-	echo mysqli_error($conn);
-} else {
-	$article = mysqli_fetch_assoc($query_result);
+	if($query_result === false){
+		echo mysqli_error($conn);
+	} else {
+		$article = mysqli_fetch_assoc($query_result);
+	}
+}
+else {
+	$article = null;
 }
 ?>
 
