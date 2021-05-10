@@ -18,25 +18,15 @@ if(is_numeric($_GET["id"])){
 else {
 	$article = null;
 }
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Boilerplate</title>
-	<link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
-</head>
-<body>
-	<h1>A Dynamic Data Driven Blog</h1>
-	<div id="root"></div>
+require("header.php");
+?>
 	<?php if(empty($article)): ?>
 		<p>Article not found </p>
 	<?php else: ?>
 		<h2><?= $article["title"] ?></h2>
 		<h3><?= $article["content"] ?></h3>
 	<?php endif; ?>
-	<script src="main.js" type="text/javascript"></script>
-</body>
-</html>
+	<?php
+	require("footer.php");
+	?>

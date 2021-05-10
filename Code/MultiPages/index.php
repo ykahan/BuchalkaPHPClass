@@ -13,19 +13,10 @@ if($query_result === false){
 } else {
 	$articles = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
 }
+
+require("header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Boilerplate</title>
-	<link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
-</head>
-<body>
-	<h1>A Dynamic Data Driven Blog</h1>
-	<div id="root"></div>
 	<?php if (empty($articles)): ?>
 		<p>The blog is empty.  Empty! </p>
 	<?php else: ?>
@@ -45,6 +36,6 @@ if($query_result === false){
 		<?php endforeach; ?>
 		</ol>
 	<?php endif; ?>
-	<script src="main.js" type="text/javascript"></script>
-</body>
-</html>
+<?php
+require("footer.php");
+?>
