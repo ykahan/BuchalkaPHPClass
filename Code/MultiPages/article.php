@@ -19,14 +19,12 @@ else {
 	$article = null;
 }
 
-require("header.php");
 ?>
+<?php require("header.php"); ?>
 	<?php if(empty($article)): ?>
 		<p>Article not found </p>
 	<?php else: ?>
 		<h2><?= $article["title"] ?></h2>
 		<h3><?= $article["content"] ?></h3>
 	<?php endif; ?>
-	<?php
-	require("footer.php");
-	?>
+	<?php require("footer.php"); ?>

@@ -14,9 +14,9 @@ if($query_result === false){
 	$articles = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
 }
 
-require("header.php");
 ?>
 
+<php require("header.php"): ?>
 	<?php if (empty($articles)): ?>
 		<p>The blog is empty.  Empty! </p>
 	<?php else: ?>
@@ -36,6 +36,4 @@ require("header.php");
 		<?php endforeach; ?>
 		</ol>
 	<?php endif; ?>
-<?php
-require("footer.php");
-?>
+<?php require("footer.php"); ?>
