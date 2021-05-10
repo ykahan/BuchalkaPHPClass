@@ -43,6 +43,9 @@ if($query_result === false){
 		<?php foreach($articles as $article): ?>
 			<li>
 				<h2>
+					<!-- the title becomes a link to the article.php file, but with the id
+					included as the query string.  this triggers article.php to look
+					up the blog post and put it on the screen. -->
 					<a href="article.php?id=<?= $article["id"]; ?>">
 						<?= $article["title"] ?>
 					</a>
