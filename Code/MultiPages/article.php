@@ -1,6 +1,6 @@
 <?php
 
-include("database.php");
+require("database.php");
 
 if(is_numeric($_GET["id"])){
 	$sql_query = "SELECT *
