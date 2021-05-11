@@ -17,6 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
 	<form method="post">
 		<fieldset>
+			<legend>Random Stuff</legend>
 			<div>text:<input type="text" name="personal_name"></div>
 			<div>password:<input type="password" name="password"></div>
 			<div>tel:<input type="tel" name="telephone"></div>
