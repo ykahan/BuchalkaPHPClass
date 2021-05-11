@@ -31,18 +31,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<div>search:<input type="search" name="search"></div>
 		<div>datetime-local:<input type="datetime-local" name="datetime-local"></div>
 		<div>textarea:<textarea name="some_text">Placeholder Text</textarea></div>
-<div>
-		<select name="degree">
-			<option value="computer_science">Comp Science</option>
-			<option value="optometry">Optometry</option>
-			<option value="marketing">Marketing</option>
-		</select>
-		<select name="limud[]" multiple>
-			<option value="chumash">Chumash</option>
-			<option value="gemara">Gemara</option>
-			<option value="mussar">Mussar</option>
-		</select>
-</div>
+		<div>
+			<select name="degree">
+				<option value="computer_science">Comp Science</option>
+				<option value="optometry">Optometry</option>
+				<option value="marketing">Marketing</option>
+			</select>
+			<select name="limud[]" multiple>
+				<option value="chumash">Chumash</option>
+				<option value="gemara">Gemara</option>
+				<option value="mussar">Mussar</option>
+			</select>
+		</div>
+		<div>
+			<select name="country">
+				<optgroup>
+					<option value="britain">Britain</option>
+					<option value="portugal">Portugal</option>
+					<option value="switzerland">Switzerland</option>
+				</optgroup>
+				<optgroup>
+					<option value="usa">USA</option>
+					<option value="canada">Canada</option>
+					<option value="mexico">Mexico</option>
+				</optgroup>
+			</select>
+		</div>
 		<input name="username">
 		<input name="password" type="password">
 		<button>Send</button>
