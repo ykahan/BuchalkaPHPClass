@@ -16,7 +16,7 @@ if($query_result === false){
 
 ?>
 
-<php require("includes/header.php"): ?>
+<?php require("includes/header.php"): ?>
 	<?php if (empty($articles)): ?>
 		<p>The blog is empty.  Empty! </p>
 	<?php else: ?>

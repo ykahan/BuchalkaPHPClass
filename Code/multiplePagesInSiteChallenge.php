@@ -17,9 +17,7 @@ $posts = [1 => 'Good news', 3 => 'Read this', 5 => 'Important announcement'];
 
             <li>
                 <a href="post.php?id=<?= $id ?>">
-                    <?=
-                    $title
-                    ?>
+                    <?= $title ?>
                 </a>
             </li>
 
