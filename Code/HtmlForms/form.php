@@ -16,9 +16,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
 	<form method="post">
-		<div>text:<input type="text" name="personal_name"></div>
-		<div>password:<input type="password" name="password"></div>
-		<div>tel:<input type="tel" name="telephone"></div>
+		<fieldset>
+			<div>text:<input type="text" name="personal_name"></div>
+			<div>password:<input type="password" name="password"></div>
+			<div>tel:<input type="tel" name="telephone"></div>
+		</fieldset>
 		<div>url:<input type="url" name="url"></div>
 		<div>date:<input type="date" name="date"></div>
 		<div>time:<input type="time" name="time"></div>
