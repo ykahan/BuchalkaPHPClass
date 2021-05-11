@@ -45,12 +45,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		</div>
 		<div>
 			<select name="country">
-				<optgroup>
+				<optgroup label="Europe">
 					<option value="britain">Britain</option>
 					<option value="portugal">Portugal</option>
 					<option value="switzerland">Switzerland</option>
 				</optgroup>
-				<optgroup>
+				<optgroup label="North America">
 					<option value="usa">USA</option>
 					<option value="canada">Canada</option>
 					<option value="mexico">Mexico</option>
