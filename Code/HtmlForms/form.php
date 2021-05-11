@@ -57,6 +57,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				</optgroup>
 			</select>
 		</div>
+		<div>
+			Male<input type="checkbox" value="male" name="male" checked>
+		</div>
 		<input name="username">
 		<input name="password" type="password">
 		<button>Send</button>
