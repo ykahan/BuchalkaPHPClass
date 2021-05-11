@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
 </head>
 <body>
-	<form>
+	<form action="process_form.php">
 		<input name="search">
 		<button>Send</button>
 	</form>
