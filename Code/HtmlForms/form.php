@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<option value="optometry">Optometry</option>
 			<option value="marketing">Marketing</option>
 		</select>
-		<select name="limud" multiple>
+		<select name="limud[]" multiple>
 			<option value="chumash">Chumash</option>
 			<option value="gemara">Gemara</option>
 			<option value="mussar">Mussar</option>
