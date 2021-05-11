@@ -31,6 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<div>search:<input type="search" name="search"></div>
 		<div>datetime-local:<input type="datetime-local" name="datetime-local"></div>
 		<div>textarea:<textarea name="some_text">Placeholder Text</textarea></div>
+<div>
 		<select name="degree">
 			<option value="computer_science">Comp Science</option>
 			<option value="optometry">Optometry</option>
@@ -41,6 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<option value="gemara">Gemara</option>
 			<option value="mussar">Mussar</option>
 		</select>
+</div>
 		<input name="username">
 		<input name="password" type="password">
 		<button>Send</button>
