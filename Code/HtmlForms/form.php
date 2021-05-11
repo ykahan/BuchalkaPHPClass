@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 					<option value="switzerland">Switzerland</option>
 				</optgroup>
 				<optgroup label="North America">
-					<option value="usa">USA</option>
+					<option selected value="usa">USA</option>
 					<option value="canada">Canada</option>
 					<option value="mexico">Mexico</option>
 				</optgroup>
