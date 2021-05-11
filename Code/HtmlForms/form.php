@@ -60,6 +60,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<div>
 			Male<input type="checkbox" value="male" name="male" checked>
 		</div>
+		<div>
+			<p>Do you prefer cats or dogs?</p>
+			Cats<input type="radio" name="pref_animal" value="cat"><br>
+			Dogs<input type="radio" name="pref_animal" value="dog" checked>
+		</div>
 		<input name="username">
 		<input name="password" type="password">
 		<button>Send</button>
