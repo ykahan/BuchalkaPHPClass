@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<div>number:<input type="number" name="number"></div>
 	<div>search:<input type="search" name="search"></div>
 	<div>datetime-local:<input type="datetime-local" name="datetime-local"></div>
-	<div>textarea:<textarea name="some_text"></textarea></div>
+	<div>textarea:<textarea name="some_text">Placeholder Text</textarea></div>
 <input name="username">
 <input name="password" type="password">
 <button>Send</button>
