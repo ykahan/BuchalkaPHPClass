@@ -4,7 +4,7 @@ require("includes/database.php");
 
 $sql_query = "SELECT *
 FROM articles
-ORDER BY published_at;";
+ORDER BY id;";
 
 $query_result = mysqli_query($conn, $sql_query);
 
