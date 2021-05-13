@@ -7,9 +7,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	require("includes/database.php");
 
 	$sql_query = "INSERT INTO articles (title, content, published_at)
-	VALUES ('" . $_POST['title'] . "',
-		'". $_POST['content'] .  "',
-		'". $_POST['published_at']."')";
+
+	-- the mysqli_escape_string function automatically escapes any quotation
+	-- marks in the values passed in, thus defeating SQL injection attacks
+	VALUES ('" . mysqli_escape_string($conn, $_POST['title']) . "',
+		'". mysqli_escape_string($conn, $_POST['content']) .  "',
+		'". mysqli_escape_string($conn, $_POST['published_at']) ."')";
 
 		$results = mysqli_query($conn, $sql_query);
 
@@ -27,13 +30,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<form method="post">
 		<div>
 			<label>Title:
-				<input name="title" id="title" placeholder="New Article Title">
+				<input required name="title" id="title" placeholder="New Article Title">
 			</label>
 		</div>
 
 		<div>
 			<label>Content:
-				<textarea name="content" rows="4" cols="40"
+				<textarea required name="content" rows="4" cols="40"
 				id="content"placeholder="Article Content"></textarea>
 			</label>
 		</div>
