@@ -2,6 +2,8 @@
 
 require("includes/database.php");
 
+$conn = getDatabase();
+
 $sql_query = "SELECT *
 FROM articles
 ORDER BY id;";

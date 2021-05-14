@@ -1,6 +1,7 @@
 <?php
 
 require("includes/database.php");
+$conn = getDatabase();
 
 if(is_numeric($_GET["id"])){
 	$sql_query = "SELECT *

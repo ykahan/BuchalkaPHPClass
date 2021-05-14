@@ -1,12 +1,11 @@
 <?php
 
 require("includes/header.php");
+require("includes/database.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-	require("includes/database.php");
-
-
+	$conn = getDatabase();
 		// -- the mysqli_escape_string function automatically escapes any quotation
 		// -- marks in the values passed in, thus defeating SQL injection attacks
 	// $sql_query = "INSERT INTO articles (title, content, published_at)
