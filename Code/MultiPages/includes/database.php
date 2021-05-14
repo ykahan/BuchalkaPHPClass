@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Retrieves database connection.
+ * Inputs are hard-coded into the function.
+ * @return  database connection
+ */
+
 function getDatabase(){
 
 	$db_host = "localhost";
