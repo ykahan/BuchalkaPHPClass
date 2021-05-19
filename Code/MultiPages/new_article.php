@@ -13,6 +13,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$published_at = $_POST['published_at'];
 	if($published_at == ''){
 		$published_at = null;
+	} else {
+		$date_time = date_create_from_format('Y-m-d H:i:s', $published_at);
+		if(!$date_time){
+			$errors[] = 'Date and/or time improperly formatted';
+		} else {
+			$date_errors = date_get_last_errors();
+			if($date_errors['warning count'] > 0){
+				$errors = 'Invalid date and/or time';
+			}
+		}
 	}
 	if($title == ''){
 		$errors[] = "Title is required";
