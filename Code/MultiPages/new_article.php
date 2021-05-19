@@ -14,6 +14,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	if($_POST['content'] == ''){
 		$errors[] = "Content is required";
 	}
+
+	if(!empty($errors)){
+		var_dump($errors);
+		exit;
+	}
 	$conn = getDatabase();
 	// -- the mysqli_escape_string function automatically escapes any quotation
 	// -- marks in the values passed in, thus defeating SQL injection attacks
