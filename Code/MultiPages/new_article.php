@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<div>
 		<label>Title:
 			<input name="title" id="title" placeholder="New Article Title"
-			value="<?= $title; ?>">
+			value="<?= htmlspecialchars($title); ?>">
 		</label>
 	</div>
 
@@ -83,7 +83,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<div>
 		<label>Publication Date:
 			<input type="datetime-local" name="published_at" id="published_at"
-			value="<?= $published_at ?>">
+			value="<?= htmlspecialchars($published_at) ?>">
 		</label>
 	</div>
 
