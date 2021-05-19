@@ -3,9 +3,8 @@
 require("includes/header.php");
 require("includes/database.php");
 
+$errors = [];
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-	$errors = [];
 
 	if($_POST['title'] == ''){
 		$errors[] = "Title is required";
@@ -15,10 +14,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$errors[] = "Content is required";
 	}
 
-	if(!empty($errors)){
-		var_dump($errors);
-		exit;
-	}
+	// if(!empty($errors)){
+	// 	var_dump($errors);
+	// 	exit;
+	// }
 	$conn = getDatabase();
 	// -- the mysqli_escape_string function automatically escapes any quotation
 	// -- marks in the values passed in, thus defeating SQL injection attacks
@@ -61,6 +60,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <h2>New Article</h2>
 <form method="post">
+	<?php if(!empty($errors)): ?>
+	 <ul>
+		 <?php foreach($errors as $error): ?>
+			 <li><?= $error ?></li>
+		 <?php endforeach; ?>
+	 </ul>
+ <?php endif; ?>
 	<div>
 		<label>Title:
 			<input  name="title" id="title" placeholder="New Article Title">
