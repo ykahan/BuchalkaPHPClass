@@ -65,13 +65,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<?php endif; ?>
 	<div>
 		<label>Title:
-			<input  name="title" id="title" placeholder="New Article Title">
+			<input required name="title" id="title" placeholder="New Article Title">
 		</label>
 	</div>
 
 	<div>
 		<label>Content:
-			<textarea  name="content" rows="4" cols="40"
+			<textarea required name="content" rows="4" cols="40"
 			id="content"placeholder="Article Content"></textarea>
 		</label>
 	</div>
