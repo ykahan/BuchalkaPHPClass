@@ -41,9 +41,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			echo mysqli_error($conn);
 		} else {
 			// binding params to create prepared statement
-			$title = $_POST['title'];
-			$content = $_POST['content'];
-			$published_at = $_POST['published_at'];
 			mysqli_stmt_bind_param($prep_stmt, "sss", $title, $content, $published_at);
 
 			// executing prepared statement
