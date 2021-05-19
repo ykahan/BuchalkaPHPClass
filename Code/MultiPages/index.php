@@ -30,10 +30,10 @@ if($query_result === false){
 					included as the query string.  this triggers article.php to look
 					up the blog post and put it on the screen. -->
 					<a href="article.php?id=<?= $article["id"]; ?>">
-						<?= $article["title"] ?>
+						<?= htmlspecialchars($article["title"]) ?>
 					</a>
 				</h2>
-				<h3><?= $article["content"] ?></h3>
+				<h3><?= htmlspecialchars($article["content"]) ?></h3>
 			</li>
 		<?php endforeach; ?>
 		</ol>

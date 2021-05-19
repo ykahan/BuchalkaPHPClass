@@ -25,7 +25,7 @@ else {
 <?php if(empty($article)): ?>
 	<p>Article not found </p>
 <?php else: ?>
-	<h2><?= $article["title"] ?></h2>
-	<h3><?= $article["content"] ?></h3>
+	<h2><?= htmlspecialchars($article["title"]) ?></h2>
+	<h3><?= htmlspecialchars($article["content"]) ?></h3>
 <?php endif; ?>
 <?php require("includes/footer.php"); ?>
