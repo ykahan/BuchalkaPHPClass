@@ -13,45 +13,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	if($_POST['content'] == ''){
 		$errors[] = "Content is required";
 	}
-
-	// if(!empty($errors)){
-	// 	var_dump($errors);
-	// 	exit;
-	// }
-	$conn = getDatabase();
-	// -- the mysqli_escape_string function automatically escapes any quotation
-	// -- marks in the values passed in, thus defeating SQL injection attacks
-	// $sql_query = "INSERT INTO articles (title, content, published_at)
-	// VALUES ('" . mysqli_escape_string($conn, $_POST['title']) . "',
-	// 	'". mysqli_escape_string($conn, $_POST['content']) .  "',
-	// 	'". mysqli_escape_string($conn, $_POST['published_at']) ."')";
+	if(empty($errors)){
+		$conn = getDatabase();
+		// -- the mysqli_escape_string function automatically escapes any quotation
+		// -- marks in the values passed in, thus defeating SQL injection attacks
+		// $sql_query = "INSERT INTO articles (title, content, published_at)
+		// VALUES ('" . mysqli_escape_string($conn, $_POST['title']) . "',
+		// 	'". mysqli_escape_string($conn, $_POST['content']) .  "',
+		// 	'". mysqli_escape_string($conn, $_POST['published_at']) ."')";
 
 
-	// $results = mysqli_query($conn, $sql_query);
+		// $results = mysqli_query($conn, $sql_query);
 
-	// using a Prepared Statement to foil SQL injection attacks.
-	$sql_query = "INSERT INTO articles(title, content, published_at)
-	VALUES(?, ?, ?)";
+		// using a Prepared Statement to foil SQL injection attacks.
+		$sql_query = "INSERT INTO articles(title, content, published_at)
+		VALUES(?, ?, ?)";
 
-	$prep_stmt = mysqli_prepare($conn, $sql_query);
+		$prep_stmt = mysqli_prepare($conn, $sql_query);
 
-	// if($results === false){
-	if($prep_stmt === false){
-		echo mysqli_error($conn);
-	} else {
-		// binding params to create prepared statement
-		$title = $_POST['title'];
-		$content = $_POST['content'];
-		$published_at = $_POST['published_at'];
-		mysqli_stmt_bind_param($prep_stmt, "sss", $title, $content, $published_at);
+		// if($results === false){
+		if($prep_stmt === false){
+			echo mysqli_error($conn);
+		} else {
+			// binding params to create prepared statement
+			$title = $_POST['title'];
+			$content = $_POST['content'];
+			$published_at = $_POST['published_at'];
+			mysqli_stmt_bind_param($prep_stmt, "sss", $title, $content, $published_at);
 
-		// executing prepared statement
-		if(mysqli_stmt_execute($prep_stmt)){
+			// executing prepared statement
+			if(mysqli_stmt_execute($prep_stmt)){
 
-			$id = mysqli_insert_id($conn);
-			echo "Inserted record with ID" . $id;
-		} else{
-			echo mysqli_stmt_error($prep_stmt);
+				$id = mysqli_insert_id($conn);
+				echo "Inserted record with ID" . $id;
+			} else{
+				echo mysqli_stmt_error($prep_stmt);
+			}
 		}
 	}
 }
@@ -61,12 +58,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <h2>New Article</h2>
 <form method="post">
 	<?php if(!empty($errors)): ?>
-	 <ul>
-		 <?php foreach($errors as $error): ?>
-			 <li><?= $error ?></li>
-		 <?php endforeach; ?>
-	 </ul>
- <?php endif; ?>
+		<ul>
+			<?php foreach($errors as $error): ?>
+				<li><?= $error ?></li>
+			<?php endforeach; ?>
+		</ul>
+	<?php endif; ?>
 	<div>
 		<label>Title:
 			<input  name="title" id="title" placeholder="New Article Title">
