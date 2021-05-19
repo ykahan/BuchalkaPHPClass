@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<div>
 		<label>Content:
 			<textarea name="content" rows="4" cols="40"
-			id="content" placeholder="Article Content"><?= $content; ?></textarea>
+			id="content" placeholder="Article Content"><?= htmlspecialchars($content); ?></textarea>
 		</label>
 	</div>
 
