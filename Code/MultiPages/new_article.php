@@ -4,7 +4,9 @@ require("includes/header.php");
 require("includes/database.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+	if($_POST['title'] == ''){
+		die("Title is required");
+	}
 	$conn = getDatabase();
 		// -- the mysqli_escape_string function automatically escapes any quotation
 		// -- marks in the values passed in, thus defeating SQL injection attacks
