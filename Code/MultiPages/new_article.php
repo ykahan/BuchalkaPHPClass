@@ -4,11 +4,17 @@ require("includes/header.php");
 require("includes/database.php");
 
 $errors = [];
+$title = '';
+$content = '';
+$published_at = '';
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-	if($_POST['title'] == ''){
+	$title = $_POST['title'];
+	$content = $_POST['content'];
+	$published_at = $_POST['published_at'];
+	if($title == ''){
 		$errors[] = "Title is required";
 	}
-	if($_POST['content'] == ''){
+	if($content == ''){
 		$errors[] = "Content is required";
 	}
 
@@ -65,20 +71,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<?php endif; ?>
 	<div>
 		<label>Title:
-			<input required name="title" id="title" placeholder="New Article Title">
+			<input name="title" id="title" placeholder="New Article Title"
+			value="<?= $title; ?>">
 		</label>
 	</div>
 
 	<div>
 		<label>Content:
-			<textarea required name="content" rows="4" cols="40"
-			id="content"placeholder="Article Content"></textarea>
+			<textarea name="content" rows="4" cols="40"
+			id="content" placeholder="Article Content"><?= $content; ?></textarea>
 		</label>
 	</div>
 
 	<div>
 		<label>Publication Date:
-			<input type="datetime-local" name="published_at" id="published_at">
+			<input type="datetime-local" name="published_at" id="published_at"
+			value="<?= $published_at ?>">
 		</label>
 	</div>
 
