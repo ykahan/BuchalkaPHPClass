@@ -49,13 +49,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<form method="post">
 		<div>
 			<label>Title:
-				<input required name="title" id="title" placeholder="New Article Title">
+				<input  name="title" id="title" placeholder="New Article Title">
 			</label>
 		</div>
 
 		<div>
 			<label>Content:
-				<textarea required name="content" rows="4" cols="40"
+				<textarea  name="content" rows="4" cols="40"
 				id="content"placeholder="Article Content"></textarea>
 			</label>
 		</div>
