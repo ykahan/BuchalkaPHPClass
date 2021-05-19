@@ -5,7 +5,10 @@ require("includes/database.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	if($_POST['title'] == ''){
-		die("Title is required");
+
+		$errors = [];
+
+		$errors[] = "Title is required";
 	}
 	$conn = getDatabase();
 		// -- the mysqli_escape_string function automatically escapes any quotation
