@@ -11,6 +11,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$title = $_POST['title'];
 	$content = $_POST['content'];
 	$published_at = $_POST['published_at'];
+	if($published_at == ''){
+		$published_at = null;
+	}
 	if($title == ''){
 		$errors[] = "Title is required";
 	}
