@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$host = $_SERVER['HTTP_HOST'];
 
 				// creating absolute path
-				$abs_path = $protocol . $host . "/Code/MultiPages/article.php?id=$id";
+				$abs_path = $protocol . $host . "/Code/Blog/article.php?id=$id";
 
 				// Using header function to redirect to article page
 				header("Location: $abs_path");
