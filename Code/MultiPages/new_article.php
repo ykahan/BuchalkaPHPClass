@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	if($published_at == ''){
 		$published_at = null;
 	} else {
-		$date_time = date_create_from_format('Y-m-d H:i:s', $published_at);
+		$date_time = date_create_from_format('Y-m-d G:i:s', $published_at);
 		if(!$date_time){
 			$errors[] = 'Date and/or time improperly formatted';
 		} else {
@@ -60,8 +60,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			if(mysqli_stmt_execute($prep_stmt)){
 
 				$id = mysqli_insert_id($conn);
-				echo "Inserted record with ID" . $id;
-			} else{
+
+				// determining absolute path to article page
+
+				// first, checking if protocol is http or https
+				if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+					$protocol = 'https://';
+				} else {
+					$protocol = 'http://';
+				}
+
+				// next, getting host
+				$host = $_SERVER['HTTP_HOST'];
+
+				// creating absolute path
+				$abs_path = $protocol . $host . "/Code/MultiPages/article.php?id=$id";
+
+				// Using header function to redirect to article page
+				header("Location: $abs_path");
+				exit;
+			} else {
 				echo mysqli_stmt_error($prep_stmt);
 			}
 		}
@@ -95,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	<div>
 		<label>Publication Date:
-			<input type="datetime-local" name="published_at" id="published_at"
+			<input type="text" name="published_at" id="published_at"
 			value="<?= htmlspecialchars($published_at) ?>">
 		</label>
 	</div>
