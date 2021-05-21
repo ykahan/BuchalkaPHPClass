@@ -1,20 +1,13 @@
 <?php
 
 require("includes/database.php");
+require("includes/article.php");
+
 $conn = getDatabase();
 
-if(is_numeric($_GET["id"])){
-	$sql_query = "SELECT *
-	FROM articles
-	WHERE id =" . $_GET["id"];
-
-	$query_result = mysqli_query($conn, $sql_query);
-
-	if($query_result === false){
-		echo mysqli_error($conn);
-	} else {
-		$article = mysqli_fetch_assoc($query_result);
-	}
+if (isset($_GET["id"]) && is_numeric($_GET["id"])){
+	$id = $_GET["id"];
+	$article = get_article($conn, $id);
 }
 else {
 	$article = null;
