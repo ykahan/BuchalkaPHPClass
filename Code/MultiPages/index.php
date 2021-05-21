@@ -22,6 +22,7 @@ if($query_result === false){
 	<?php if (empty($articles)): ?>
 		<p>The blog is empty.  Empty! </p>
 	<?php else: ?>
+		<a href="new_article.php">Submit New Article</a>
 	<ol>
 		<?php foreach($articles as $article): ?>
 			<li>

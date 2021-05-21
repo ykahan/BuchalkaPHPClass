@@ -120,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	<button>Submit</button>
 </form>
-
+<a href="index.php">Return to Index</a>
 <?php
 
 require("includes/footer.php");

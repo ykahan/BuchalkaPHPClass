@@ -28,4 +28,6 @@ else {
 	<h2><?= htmlspecialchars($article["title"]) ?></h2>
 	<h3><?= htmlspecialchars($article["content"]) ?></h3>
 <?php endif; ?>
+<a href="index.php">Go to index</a>
+<a href="new_article.php">Submit new article</a>
 <?php require("includes/footer.php"); ?>
