@@ -21,6 +21,18 @@ else {
 	die("ID not provided");
 }
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+	$title = $_POST['title'];
+	$content = $_POST['content'];
+	$published_at = $_POST['published_at'];
+
+	$errors = validate_article($title, $content, $published_at);
+
+	if(empty($errors)){
+		die("Form is valid");
+		exit;
+	}
+}
 require("includes/header.php");
 ?>
 <h2>Edit Article Form</h2>

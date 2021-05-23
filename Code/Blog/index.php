@@ -1,6 +1,7 @@
 <?php
 
 require("includes/database.php");
+require("includes/article.php");
 
 $conn = getDatabase();
 

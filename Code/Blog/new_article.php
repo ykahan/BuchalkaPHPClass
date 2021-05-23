@@ -2,6 +2,7 @@
 
 require("includes/header.php");
 require("includes/database.php");
+require("includes/article.php");
 
 $errors = [];
 $title = '';
@@ -11,25 +12,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$title = $_POST['title'];
 	$content = $_POST['content'];
 	$published_at = $_POST['published_at'];
-	if($published_at == ''){
-		$published_at = null;
-	} else {
-		$date_time = date_create_from_format('Y-m-d G:i:s', $published_at);
-		if(!$date_time){
-			$errors[] = 'Date and/or time improperly formatted';
-		} else {
-			$date_errors = date_get_last_errors();
-			if($date_errors['warning count'] > 0){
-				$errors = 'Invalid date and/or time';
-			}
-		}
-	}
-	if($title == ''){
-		$errors[] = "Title is required";
-	}
-	if($content == ''){
-		$errors[] = "Content is required";
-	}
+
+$errors = validate_article($title, $content, $published_at);
 
 	if(empty($errors)){
 		$conn = getDatabase();
