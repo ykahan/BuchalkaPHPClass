@@ -16,10 +16,11 @@ else {
 ?>
 <?php require("includes/header.php"); ?>
 <?php if(empty($article)): ?>
-	<p>Article not found </p>
+	<p>Article not found  HTML</p>
 <?php else: ?>
 	<h2><?= htmlspecialchars($article["title"]) ?></h2>
 	<h3><?= htmlspecialchars($article["content"]) ?></h3>
+	<a href= "edit_article.php?id=<?= $article['id'] ?>">Edit Article</a>
 <?php endif; ?>
 <a href="index.php">Go to index</a>
 <a href="new_article.php">Submit new article</a>
