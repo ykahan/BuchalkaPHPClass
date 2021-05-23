@@ -2,6 +2,7 @@
 
 require("includes/database.php");
 require("includes/article.php");
+require("includes/url.php");
 
 $conn = getDatabase();
 if (isset($_GET["id"]) && is_numeric($_GET['id'])) {
@@ -42,27 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 			// executing prepared statement
 			if(mysqli_stmt_execute($prep_stmt)){
-
-				// $id = mysqli_insert_id($conn);
-
-				// determining absolute path to article page
-
-				// first, checking if protocol is http or https
-				if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-					$protocol = 'https://';
-				} else {
-					$protocol = 'http://';
-				}
-
-				// next, getting host
-				$host = $_SERVER['HTTP_HOST'];
-
-				// creating absolute path
-				$abs_path = $protocol . $host . "/Code/Blog/article.php?id=$id";
-
-				// Using header function to redirect to article page
-				header("Location: $abs_path");
-				exit;
+				redirect("/Code/Blog/article.php?id=$id");
 			} else {
 				echo mysqli_stmt_error($prep_stmt);
 			}
