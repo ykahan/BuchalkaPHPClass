@@ -16,7 +16,7 @@ else {
 ?>
 <?php require("includes/header.php"); ?>
 <?php if(empty($article)): ?>
-	<p>Article not found  HTML</p>
+	<p>Article not found</p>
 <?php else: ?>
 	<h2><?= htmlspecialchars($article["title"]) ?></h2>
 	<h3><?= htmlspecialchars($article["content"]) ?></h3>
