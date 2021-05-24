@@ -4,11 +4,12 @@
 * [retrieves individual article from articles database]
 * @param  object $conn database connection
 * @param  integer $id   the article ID
+* @param  String $columns Optional list of columns to be accessed, defaults to *
 * @return Associative_Array      An associative array containing the
 * requested article, or null if article not found
 */
-function get_article($conn, $id){
-	$sql = "SELECT * FROM articles WHERE id = ?";
+function get_article($conn, $id, $columns="*"){
+	$sql = "SELECT $columns FROM articles WHERE id = ?";
 	$stmt = mysqli_prepare($conn, $sql);
 	if(!$stmt){
 		echo mysqli_error($conn);

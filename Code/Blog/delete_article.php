@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$conn = getDatabase();
 	if (isset($_GET["id"]) && is_numeric($_GET['id'])) {
 		$id = $_GET['id'];
-		$article = get_article($conn, $id);
+		$article = get_article($conn, $id, 'id');
 		if($article){
 			$title = $article['title'];
 			$content = $article['content'];
