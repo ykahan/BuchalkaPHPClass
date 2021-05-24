@@ -39,6 +39,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo mysqli_stmt_error($prep_stmt);
 		}
 	}
-} else {
-	redirect("/Code/Blog/index.php");
 }
+
+require("includes/header.php");
+?>
+<h2>Deleting Article</h2>
+<form method="POST">
+	<p>Are you sure about this?</p>
+	<button>Delete This Article</button>
+	<a href= "article.php?id=<?= $_GET['id'] ?>">Cancel</a>
+</form>
+<?php require("includes/footer.php"); ?>

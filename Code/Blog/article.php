@@ -20,11 +20,9 @@ else {
 <?php else: ?>
 	<h2><?= htmlspecialchars($article["title"]) ?></h2>
 	<h3><?= htmlspecialchars($article["content"]) ?></h3>
-	<a href= "edit_article.php?id=<?= $article['id'] ?>">Edit Article</a>
+	<a href= "edit_article.php?id=<?= $article['id'] ?>">Edit This Article</a>
 <?php endif; ?>
 <a href="index.php">Go to index</a>
 <a href="new_article.php">Submit New Article</a>
-<form method="POST" action = "delete_article.php?id=<?=$article['id']?>">
-	<button> Delete This Article</button>
-</form>
+<a href="delete_article.php?id=<?= $article['id'] ?>">Delete This Article</a>
 <?php require("includes/footer.php"); ?>
