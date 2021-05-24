@@ -23,5 +23,6 @@ else {
 	<a href= "edit_article.php?id=<?= $article['id'] ?>">Edit Article</a>
 <?php endif; ?>
 <a href="index.php">Go to index</a>
-<a href="new_article.php">Submit new article</a>
+<a href="new_article.php">Submit New Article</a>
+<a href="delete_article.php?id=<?=$article['id']?>">Delete This Article</a>
 <?php require("includes/footer.php"); ?>
