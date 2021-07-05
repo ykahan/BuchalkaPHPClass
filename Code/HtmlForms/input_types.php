@@ -33,6 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<div>datetime-local: <input type="datetime-local"></div>
 
 		</form>
+		<!-- testing token -->
 	</div>
 	<script src="main.js" type="text/javascript"></script>
 </body>
