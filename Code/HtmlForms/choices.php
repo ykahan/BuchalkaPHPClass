@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				</div>
 				<div>
 					<label for="content">Content</label>
-					<textarea autofocus name="content" id="content" row="4" cols="40"></textarea>
+					<textarea autofocus gname="content" id="content" row="4" cols="40"></textarea>
 				</div>
 			</fieldset>
 			<fieldset>
