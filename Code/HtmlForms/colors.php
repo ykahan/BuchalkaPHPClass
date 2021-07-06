@@ -15,6 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<div id="root">
 		<form method="POST">
 			<fieldset>
+				<legend>Article</legend>
 				<div>
 					<label for="title">Title</label><input type="text" name="title" id="title>"
 				</div>
@@ -24,6 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				</div>
 			</fieldset>
 			<fieldset>
+				<legend>Pick A Color</legend>
 			<div><p>What's your favorite color?</p></div>
 			<input type="radio" name="color" value="blue" id="blue">
 			<label for="blue">Blue</label>
