@@ -42,9 +42,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			</fieldset>
 			<fieldset>
 				<legend>Countries</legend>
-				<input type="radio" name="countries" value="britain" id="britain"><label for="britain">Britain</label><br>
-				<input type="radio" name="countries" value="zaire" id="zaire" disabled><label for="zaire">Zaire</label><br>
-				<input type="radio" name="countries" value="uruguay" id="uruguay"><label for="uruguay">Uruguay</label><br>
+				<select disabled>
+					<option value="britain" id="britain">Britain</option>
+					<option value="zaire" id="zaire" disabled>Zaire</option>
+					<option value="uruguay" id="uruguay">Uruguay</option>
+				</select>
 			</fieldset>
 			<button>Submit</button>
 		</form>
