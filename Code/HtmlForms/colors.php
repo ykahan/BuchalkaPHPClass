@@ -15,10 +15,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<div id="root">
 		<form method="POST">
 			<div><p>What's your favorite color?</p></div>
-			<input type="radio" name="color" value="blue">Blue<br>
-			<input type="radio" name="color" value="red" checked>Red<br>
-			<input type="radio" name="color" value="gray">Gray<br>
-			<input type="radio" name="color" value="gray">Yellow<br>
+			<input type="radio" name="color" value="blue" id="blue">
+			<label for="blue">Blue</label>
+			<br>
+			<input type="radio" name="color" value="red" id="red" checked>
+			<label for="red">Red</label>
+			<br>
+			<input type="radio" name="color" value="gray" id="gray">
+			<label for="gray">Gray</label>
+			<br>
+			<input type="radio" name="color" value="yellow" id="yellow">
+			<label for="yellow">Yellow</label>
+			<br>
 			<button>Submit</button>
 		</form>
 	</div>
