@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			</fieldset>
 			<fieldset>
 				<legend>Pick A Color</legend>
-			<div><p>What's your favorite color?</p></div>
+			<div></div>
 			<input type="radio" name="color" value="blue" id="blue">
 			<label for="blue">Blue</label>
 			<br>
