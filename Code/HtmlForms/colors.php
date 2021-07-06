@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<fieldset>
 				<legend>Article</legend>
 				<div>
-					<label for="title">Title</label><input type="text" name="title" id="title>"
+					<label for="title">Title</label><input readonly type="text" name="title" id="title>"
 				</div>
 				<div>
 					<label for="content">Content</label>
