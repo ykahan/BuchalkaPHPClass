@@ -15,7 +15,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<div id="root">
 		<form method="POST">
 			<div>
-				<label>Zipcode: <input required name="zipcode" placeholder="zipcode"></label>
+				<label>Zipcode:
+					<input title="Please use a valid US zip code" required name="zipcode" placeholder="zipcode" pattern="(\d{5}([\-]\d{4})?)">
+				</label>
 			</div>
 			<div>
 				<label>Email: <input type="email" name="email" placeholder="email"></label>
