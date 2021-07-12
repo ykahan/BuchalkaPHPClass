@@ -2,6 +2,8 @@
 
 require("includes/database.php");
 require("includes/article.php");
+require("includes/header.php");
+
 
 $conn = getDatabase();
 
@@ -12,9 +14,8 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])){
 else {
 	$article = null;
 }
-
 ?>
-<?php require("includes/header.php"); ?>
+
 <?php if(empty($article)): ?>
 	<p>Article not found</p>
 <?php else: ?>
