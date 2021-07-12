@@ -3,14 +3,20 @@
 require('includes/header.php');
 require('includes/database.php');
 $errors = [];
+$title = "";
+$text = "";
+$date_published = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+	$title = $_POST['title'];
+	$text = $_POST['text'];
+	$date_published = $_POST['date_published'];
 
-	if($_POST['title'] == ""){
+	if($title == ""){
 		$errors[] = "Article title is required.";
 	}
 
-	if($_POST['text'] == ""){
+	if($text == ""){
 		$errors[] = "Article text is required.";
 	}
 
@@ -25,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if($stmt == false){
 			echo mysqli_error($conn);
 		} else {
-			mysqli_stmt_bind_param($stmt, "sss", $_POST['title'], $_POST['text'], $_POST['date_published'] );
+			mysqli_stmt_bind_param($stmt, "sss", $title, $text, $date_published );
 			if(mysqli_stmt_execute($stmt)){
 				$id = mysqli_insert_id($conn);
 				echo "Inserted article with id #" . $id;
@@ -51,21 +57,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	<div>
 		<label for="title">Title </label>
-		<input name="title" id="title">
+		<input name="title" id="title" value="<?= $title; ?>">
 	</div>
 
 	<br>
 
 	<div>
 		<label for="text">Text </label>
-		<textarea name="text" id="text"></textarea>
+		<textarea name="text" id="text"><?= $text; ?></textarea>
 	</div>
 
 	<br>
 
 	<div>
 		<label for="date_published">Date Published </label>
-		<input type="datetime-local" name="date_published" id="date_published">
+		<input type="datetime-local" name="date_published" id="date_published" value="<?= $date_published; ?>">
 	</div>
 
 	<button>Add Article</button>
